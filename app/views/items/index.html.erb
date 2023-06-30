@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>自社出品機能</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>自社出品機能</h1>
+    <div class="userActions">
+      <% if user_signed_in? %>
+        <%= link_to "商品登録", new_item_path, class: "item_register" %>
+        <%= link_to current_user.name, "#", class: "registerLink" %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "loginLink" %>
+      <% else %>
+        <%= link_to "新規登録", new_user_registration_path, class: "registerLink" %>
+        <%= link_to "ログイン", new_user_session_path, class: "loginLink" %>
+      <% end %>
+    </div>
+  </header>
+
+  <main>
+    <% if user_signed_in? %>
+      <div class="itemActions">
+        <%= link_to "商品追加", "#", class: "item_addition" %>
+        <div class="item_detail">明細</div>
+        <div class="item_total">合計</div>
+      </div>
+    <% end %>
+
+    <%# 商品検索 %>
+    <div class="searchResults">  
+      <%= search_form_for @search do |f| %>
+        <%= f.search_field :name_cont_any, placeholder: "商品名" %>
+        <%= f.submit "検索" %>
+       <% end %>
+    </div>
+
+    
+    <% @items.each do |item| %>
+      <div class="itemList">
+        <div class="itemImg">
+          <%= image_tag item.image, class: "item-img" %>
+        </div>
+        <div class="img">
+          <div class="imgCondition">
+            <%= item.condition.name %>
+          </div>
+          <div class="imgName">
+            <%= item.name %>
+          </div>
+          <div class="imgPrce">
+            <%= item.price %>円
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%# /商品検索 %>
+  </main>
+
+  <footer>
+  </footer>
+</body>
+</html>

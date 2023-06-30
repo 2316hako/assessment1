@@ -1,0 +1,81 @@
+/* 全体のスタイル */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header, main, footer {
+  padding: 20px;
+}
+
+/* ヘッダーのスタイル */
+header {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.userActions a {
+  margin-left: 10px;
+}
+
+/* 新規登録,ログイン,商品登録のスタイル */
+.userActions {
+  display: flex;
+  align-items: center;
+}
+
+.item_register,
+.registerLink,
+.loginLink {
+  padding: 5px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+}
+
+/* 商品追加、明細、合計ボタンのスタイル */
+.itemActions {
+  display: flex;
+  align-items: center;
+}
+
+.item_addition,
+.item_detail,
+.item_total {
+  padding: 5px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+/* 商品検索機能、画像、名前、相場、状態のスタイル */
+.searchResults{
+  margin-top: 10px;
+}
+
+.itemList {
+  padding: 5px;
+  background-color: #4CAF50;
+  display: inline-block;
+  margin-top: 10px;
+  width: fit-content;
+}
+
+.item-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.img {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
