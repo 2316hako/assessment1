@@ -1,16 +1,44 @@
+<%= link_to "Assessment", root_path, class: "assessment" %>
+
 <div class="item-img-content">
   <%= image_tag @item.image ,class:"item-box-img" %>
 </div>
 
-<div class="">
-  商品状態<%= @item.condition.name %>
-</div>
-<div class="">
-  商品名<%= @item.name %>
-</div>
-<div class="">
-  相場<%= @item.price %>
-</div>
-<div class="">
-  商品登録者<%= @item.user.name %>
-</div>
+<% if user_signed_in? && current_user.id == @item.user_id %>
+
+  <div class="item-red-destroy">
+    <%= link_to "商品の編集", "#", class: "item-red-btn" %>
+    <%= link_to "削除", "#", class:"item-destroy" %>
+  </div>
+
+  <div class="allName">
+    <div class="conditionName">
+      商品状態 <%= @item.condition.name %>
+    </div>
+    <div class="nameName">
+      商品名 <%= @item.name %>
+    </div>
+    <div class="priceName">
+      相場 <%= @item.price %>
+    </div>
+    <div class="userName">
+      商品登録者 <%= @item.user.name %>
+    </div>
+  </div>
+
+<% else %>
+
+  <div class="">
+    商品状態<%= @item.condition.name %>
+  </div>
+  <div class="">
+    商品名<%= @item.name %>
+  </div>
+  <div class="">
+    相場<%= @item.price %>
+  </div>
+  <div class="">
+    商品登録者<%= @item.user.name %>
+  </div>
+  
+<% end %>
