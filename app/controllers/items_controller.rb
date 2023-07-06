@@ -42,6 +42,10 @@ class ItemsController < ApplicationController
     redirect_to items_path
   end
 
+  def saved
+    @saved_items = current_user.likes.includes(:item).map(&:item)
+  end
+
   private
 
   def set_item
