@@ -39,6 +39,7 @@
     
     <% @items.each do |item| %>
       <div class="itemList">
+      <%= link_to item_path(item.id) do %>
         <div class="itemImg">
           <%= image_tag item.image, class: "item-img" %>
         </div>
@@ -53,6 +54,7 @@
             <%= item.price %>円
           </div>
         </div>
+      <% end %>
       </div>
     <% end %>
     <%# /商品検索 %>

@@ -60,3 +60,7 @@ gem 'devise'
 gem 'active_hash'
 
 gem 'ransack'
+
+group :production do
+  gem 'pg'
+end

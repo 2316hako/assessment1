@@ -1,0 +1,73 @@
+/* タイトル、画像のスタイル */
+.assessment {
+  color: #4CAF50;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 20px 0;
+}
+
+.item-img-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-box-img {
+  height: 50vh;
+  width: 60vw;
+  min-height: 500px;
+  background-color: rgb(205, 202, 202);
+  object-fit: contain;
+}
+
+/* 商品編集、商品削除のスタイル */
+
+.item-red-destroy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.item-red-btn {
+  text-align: center;
+  background-color: #ea352d;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  margin: 20px 10px 20px 0;
+  padding: 2vh 10vw;
+  text-decoration: none;
+}
+
+.item-destroy {
+  background-color: lightgray;
+  text-align: center;
+  font-size: 24px;
+  color: black;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  text-decoration: none;
+}
+
+/* =================================2 */
+.allName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  font-size: 25px;
+  color: #4CAF50;
+}
+
+.conditionName,
+.nameName,
+.priceName,
+.userName {
+  text-align: center;
+  margin-top: 10px;
+}
