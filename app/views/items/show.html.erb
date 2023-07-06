@@ -7,8 +7,8 @@
 <% if user_signed_in? && current_user.id == @item.user_id %>
 
   <div class="item-red-destroy">
-    <%= link_to "商品の編集", "#", class: "item-red-btn" %>
-    <%= link_to "削除", "#", class:"item-destroy" %>
+    <%= link_to "商品の編集", edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
+    <%= link_to "削除", item_path(@item.id), method: :delete, class:"item-destroy" %>
   </div>
 
   <div class="allName">
@@ -28,17 +28,19 @@
 
 <% else %>
 
-  <div class="">
-    商品状態<%= @item.condition.name %>
-  </div>
-  <div class="">
-    商品名<%= @item.name %>
-  </div>
-  <div class="">
-    相場<%= @item.price %>
-  </div>
-  <div class="">
-    商品登録者<%= @item.user.name %>
+  <div class="allNameelse">
+    <div class="conditionName">
+      商品状態<%= @item.condition.name %>
+    </div>
+    <div class="nameName">
+      商品名<%= @item.name %>
+    </div>
+    <div class="priceName">
+      相場<%= @item.price %>
+    </div>
+    <div class="userName">
+      商品登録者<%= @item.user.name %>
+    </div>
   </div>
   
 <% end %>
