@@ -47,22 +47,6 @@ header h1 {
   text-decoration: none;
 }
 
-/* 商品追加、明細、合計ボタンのスタイル */
-.itemActions {
-  display: flex;
-  align-items: center;
-}
-
-.item_addition,
-.item_detail,
-.item_total {
-  padding: 5px;
-  background-color: #4CAF50;
-  color: white;
-  text-decoration: none;
-  margin-left: 5px;
-}
-
 /* 商品検索機能、画像、名前、相場、状態のスタイル */
 .searchResults{
   margin-top: 10px;

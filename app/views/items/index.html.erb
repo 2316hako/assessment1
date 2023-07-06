@@ -21,23 +21,15 @@
   </header>
 
   <main>
-    <% if user_signed_in? %>
-      <div class="itemActions">
-        <%= link_to "商品追加", "#", class: "item_addition" %>
-        <div class="item_detail">明細</div>
-        <div class="item_total">合計</div>
-      </div>
-    <% end %>
-
     <%# 商品検索 %>
     <div class="searchResults">  
       <%= search_form_for @search do |f| %>
         <%= f.search_field :name_cont_any, placeholder: "商品名" %>
+        <%= f.select :condition_id_eq, Condition.all.map { |c| [c.name, c.id] }, include_blank: true %>
         <%= f.submit "検索" %>
-       <% end %>
+      <% end %>
     </div>
 
-    
     <% @items.each do |item| %>
       <div class="itemList">
       <%= link_to item_path(item.id) do %>
