@@ -54,10 +54,16 @@
             <%= item.price %>円
           </div>
         </div>
+        <div id="like-btn<%= item.id %>">
+          <%= render partial: "likes/like", locals: { item: item } %>
+        </div>
       <% end %>
       </div>
     <% end %>
     <%# /商品検索 %>
+    <%# LIKE機能 %>
+    
+    <%# /LIKE機能 %>
   </main>
 
   <footer>
