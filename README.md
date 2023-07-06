@@ -8,7 +8,7 @@
 
 ### Association
 has_many :items
-has_many :item_additions
+has_many :likes
 
 ## itemsテーブル
 
@@ -21,21 +21,18 @@ has_many :item_additions
 
 ## Association
 belongs_to :user
+has_many: likes
 
-## item_additionsテーブル
+## likesテーブル
 
-| Column             | Type    | Options                        |
-| ------------------ | ------- | ------------------------------ |
-| name               | string  | null: false                    |
-| condition_id       | integer | null: false                    |
-| market_price       | integer | null: false                    |
-| quantity           | integer | null: false                    |
-| presentation_price | integer | null: false                    |
-| ratio              | integer | null: false                    |
-| user               | integer | null: false, foreign_key: true |
+| Column | Type   | Options                        |
+| ------ | ------ | ------------------------------ |
+| item   | string | null: false, foreign_key: true |
+| user   | string | null: false, foreign_key: true |
 
 ## Association
 belongs_to :user
+belongs_to :item
 
 ## README
 ・アプリケーション名 ASSESSMENT

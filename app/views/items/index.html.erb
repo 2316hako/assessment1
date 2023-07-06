@@ -6,9 +6,10 @@
 </head>
 <body>
   <header>
-    <h1>自社出品機能</h1>
+    <%= link_to "Assessment", root_path, class: "title" %>
     <div class="userActions">
       <% if user_signed_in? %>
+        <%= link_to "保存一覧", saved_items_path, class: "item_like" %>
         <%= link_to "商品登録", new_item_path, class: "item_register" %>
         <%= link_to current_user.name, "#", class: "registerLink" %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "loginLink" %>
@@ -54,6 +55,11 @@
             <%= item.price %>円
           </div>
         </div>
+        <%# LIKE機能 %>
+        <div id="like-btn<%= item.id %>">
+          <%= render partial: "likes/like", locals: { item: item } %>
+        </div>
+        <%# /LIKE機能 %>
       <% end %>
       </div>
     <% end %>

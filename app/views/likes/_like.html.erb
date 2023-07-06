@@ -1,0 +1,5 @@
+<% if user_signed_in? && item.liked_by?(current_user) %>
+  <%= link_to "保存済み", item_like_path(item, item.likes), method: :delete, class: "item-like", remote: true %>
+<% else %>
+  <%= link_to "保存する", item_likes_path(item), method: :post, class: "item-like", remote: true %>
+<% end %>
