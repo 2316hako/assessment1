@@ -1,0 +1,107 @@
+<% @saved_items.each do |item| %>
+  <% if item.condition.id == 2 %>
+    <div class="itemList2">
+    <%= link_to item_path(item.id) do %>
+      <div class="itemImg">
+        <%= image_tag item.image, class: "item-img" %>
+      </div>
+      <div class="img">
+        <div class="imgCondition">
+          <%= item.condition.name %>
+        </div>
+        <div class="imgName">
+          <%= item.name %>
+        </div>
+        <div class="imgPrce">
+          <%= item.price %>円
+        </div>
+      </div>
+      <%# LIKE機能 %>
+      <% if user_signed_in? %>
+      <div id="like-btn<%= item.id %>">
+        <%= render partial: "likes/like", locals: { item: item } %>
+      </div>
+      <% end %>
+      <%# /LIKE機能 %>
+    <% end %>
+    </div>
+  <% elsif item.condition.id == 3 %>
+    <div class="itemList3">
+    <%= link_to item_path(item.id) do %>
+      <div class="itemImg">
+        <%= image_tag item.image, class: "item-img" %>
+      </div>
+      <div class="img">
+        <div class="imgCondition">
+          <%= item.condition.name %>
+        </div>
+        <div class="imgName">
+          <%= item.name %>
+        </div>
+        <div class="imgPrce">
+          <%= item.price %>円
+        </div>
+      </div>
+      <%# LIKE機能 %>
+      <% if user_signed_in? %>
+      <div id="like-btn<%= item.id %>">
+        <%= render partial: "likes/like", locals: { item: item } %>
+      </div>
+      <% end %>
+      <%# /LIKE機能 %>
+    <% end %>
+    </div>
+  <% elsif item.condition.id == 4 %>
+    <div class="itemList4">
+    <%= link_to item_path(item.id) do %>
+      <div class="itemImg">
+        <%= image_tag item.image, class: "item-img" %>
+      </div>
+      <div class="img">
+        <div class="imgCondition">
+          <%= item.condition.name %>
+        </div>
+        <div class="imgName">
+          <%= item.name %>
+        </div>
+        <div class="imgPrce">
+          <%= item.price %>円
+        </div>
+      </div>
+      <%# LIKE機能 %>
+      <% if user_signed_in? %>
+      <div id="like-btn<%= item.id %>">
+        <%= render partial: "likes/like", locals: { item: item } %>
+      </div>
+      <% end %>
+      <%# /LIKE機能 %>
+    <% end %>
+    </div>
+  <% elsif item.condition.id == 5 %>
+    <div class="itemList5">
+    <%= link_to item_path(item.id) do %>
+      <div class="itemImg">
+        <%= image_tag item.image, class: "item-img" %>
+      </div>
+      <div class="img">
+        <div class="imgCondition">
+          <%= item.condition.name %>
+        </div>
+        <div class="imgName">
+          <%= item.name %>
+        </div>
+        <div class="imgPrce">
+          <%= item.price %>円
+        </div>
+      </div>
+      <%# LIKE機能 %>
+      <% if user_signed_in? %>
+      <div id="like-btn<%= item.id %>">
+        <%= render partial: "likes/like", locals: { item: item } %>
+      </div>
+      <% end %>
+      <%# /LIKE機能 %>
+    <% end %>
+    </div>
+  <% end %>
+<% end %>

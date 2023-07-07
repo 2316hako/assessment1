@@ -1,26 +1,4 @@
 <div class="item_like_list">
   <%= link_to "保存一覧", root_path, class: "item_like_list_path" %>
 </div>
-<% @saved_items.each do |item| %>
-  <div class="itemList">
-  <%= link_to item_path(item.id) do %>
-    <div class="itemImg">
-      <%= image_tag item.image, class: "item-img" %>
-    </div>
-    <div class="img">
-      <div class="imgCondition">
-        <%= item.condition.name %>
-      </div>
-      <div class="imgName">
-        <%= item.name %>
-      </div>
-      <div class="imgPrce">
-        <%= item.price %>円
-      </div>
-    </div>
-    <div id="like-btn<%= item.id %>">
-      <%= render partial: "likes/like", locals: { item: item } %>
-    </div>
-  <% end %>
-  </div>
-<% end %>
+<%= render partial: "items/saved" %>
