@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   def index
     @item = Item.all
     @search = Item.ransack(params[:q])
-    @items = @search.result
+    @items = @search.result.order(created_at: :desc)
   end
 
   def new
@@ -37,6 +37,7 @@ class ItemsController < ApplicationController
 
   def destroy
     if current_user.id == @item.user_id
+      Like.where(item_id: @item.id).destroy_all
       @item.destroy
     end
     redirect_to items_path

@@ -52,12 +52,30 @@ header h1 {
   margin-top: 10px;
 }
 
-.itemList {
+.itemList2,
+.itemList3,
+.itemList4,
+.itemList5 {
   padding: 5px;
-  background-color: #4CAF50;
   display: inline-block;
   margin-top: 10px;
   width: fit-content;
+}
+
+.itemList2 {
+  background-color: #ff7f50;
+}
+
+.itemList3 {
+  background-color: #4CAF50;
+}
+
+.itemList4 {
+  background-color: #87ceeb;
+}
+
+.itemList5 {
+  background-color: #a9a9a9;
 }
 
 .item-img {

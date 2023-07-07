@@ -29,33 +29,9 @@
         <%= f.submit "検索" %>
       <% end %>
     </div>
-
-    <% @items.each do |item| %>
-      <div class="itemList">
-      <%= link_to item_path(item.id) do %>
-        <div class="itemImg">
-          <%= image_tag item.image, class: "item-img" %>
-        </div>
-        <div class="img">
-          <div class="imgCondition">
-            <%= item.condition.name %>
-          </div>
-          <div class="imgName">
-            <%= item.name %>
-          </div>
-          <div class="imgPrce">
-            <%= item.price %>円
-          </div>
-        </div>
-        <%# LIKE機能 %>
-        <div id="like-btn<%= item.id %>">
-          <%= render partial: "likes/like", locals: { item: item } %>
-        </div>
-        <%# /LIKE機能 %>
-      <% end %>
-      </div>
-    <% end %>
     <%# /商品検索 %>
+    <%= render partial: "items/index" %>
+    
   </main>
 
   <footer>
